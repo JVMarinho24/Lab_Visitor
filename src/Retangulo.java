@@ -1,20 +1,29 @@
-public class Retangulo {
-    private double Altura;
-    private double Largura;
+public class Retangulo implements FiguraGeometrica {
+    private double altura;
+    private double largura;
 
-    public Retangulo(double h, double l){
-        this.Altura = h;
-        this.Largura = l;
+    public Retangulo(double altura, double largura) {
+        this.altura = altura;
+        this.largura = largura;
     }
 
     public double getAltura() {
-        return Altura;
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
     }
 
     public double getLargura() {
-        return Largura;
+        return largura;
     }
 
+    public void setLargura(double largura) {
+        this.largura = largura;
+    }
+
+    @Override
     public void aceitaVisita(VisitorIF v) {
         v.visitaRetangulo(this);
     }

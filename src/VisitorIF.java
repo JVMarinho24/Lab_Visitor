@@ -1,6 +1,6 @@
 public interface VisitorIF {
-
-    public double visitaRetangulo(Retangulo r);
-    public double visitaTriangulo(Triangulo t);
-    public double visitaCirculo(Circulo c);
+    void visitaCirculo(Circulo c);
+    void visitaTriangulo(Triangulo t);
+    void visitaRetangulo(Retangulo r);
+    void visitaTrapezio(Trapezio t);
 }
