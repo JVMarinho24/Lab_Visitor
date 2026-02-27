@@ -17,21 +17,14 @@ public class Main {
         figuras.add(retangulo);
         figuras.add(trapezio);
 
-        // Criando os Visitors (operações)
-        VisitorIF visitorDesenhar = new VisitorDesenhar();
+        // Criando os Visitors
         VisitorIF visitorArea = new VisitorCalculaArea();
         VisitorIF visitorPerimetro = new VisitorCalculaPerimetro();
         VisitorIF visitorMaximizar = new VisitorMaximizarFigura();
 
-        // === Operação: Desenhar ===
-        System.out.println("========================================");
-        System.out.println("       OPERAÇÃO: DESENHAR FIGURAS       ");
-        System.out.println("========================================");
-        for (FiguraGeometrica figura : figuras) {
-            figura.aceitaVisita(visitorDesenhar);
-        }
 
-        // === Operação: Calcular Área ===
+
+        // Calcular Área
         System.out.println("========================================");
         System.out.println("       OPERAÇÃO: CALCULAR ÁREA          ");
         System.out.println("========================================");
@@ -39,7 +32,7 @@ public class Main {
             figura.aceitaVisita(visitorArea);
         }
 
-        // === Operação: Calcular Perímetro ===
+        // Calcular Perímetro
         System.out.println("\n========================================");
         System.out.println("     OPERAÇÃO: CALCULAR PERÍMETRO       ");
         System.out.println("========================================");
@@ -53,14 +46,6 @@ public class Main {
         System.out.println("========================================");
         for (FiguraGeometrica figura : figuras) {
             figura.aceitaVisita(visitorMaximizar);
-        }
-
-        // === Recalcular Área após maximizar ===
-        System.out.println("\n========================================");
-        System.out.println("   ÁREA APÓS MAXIMIZAR (deve ser 4x)    ");
-        System.out.println("========================================");
-        for (FiguraGeometrica figura : figuras) {
-            figura.aceitaVisita(visitorArea);
         }
     }
 }
